@@ -8,18 +8,19 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import Banner3DObject from "@/components/Banner3DObject";
 
 export default function Home() {
-  let titleRef = useRef<HTMLHeadingElement>(null);
-  let subtitleRef = useRef<HTMLHeadingElement>(null);
+  let titleRef = React.useRef() as React.MutableRefObject<HTMLHeadingElement>;
+  let subtitleRef =
+    React.useRef() as React.MutableRefObject<HTMLParagraphElement>;
 
   useEffect(() => {
-    gsap.from(titleRef, {
+    gsap.from(titleRef.current, {
       duration: 0.5,
       y: 100,
       opacity: 0,
       ease: "linear",
     });
 
-    gsap.from(subtitleRef, {
+    gsap.from(subtitleRef.current, {
       duration: 0.5,
       y: 50,
       opacity: 0,
@@ -51,13 +52,10 @@ export default function Home() {
           </ul>
         </div>
 
-        <h1
-          ref={(el) => (titleRef = el)}
-          className="text-5xl font-semibold capitalize mt-20"
-        >
+        <h1 ref={titleRef} className="text-5xl font-semibold capitalize mt-20">
           Bored of the same old layout?
         </h1>
-        <p ref={(el) => (subtitleRef = el)}>We can help you with that</p>
+        <p ref={subtitleRef}>We can help you with that</p>
 
         <Canvas className="mt-10">
           <ambientLight color={0xffffff} />
