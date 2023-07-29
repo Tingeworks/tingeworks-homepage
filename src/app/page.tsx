@@ -32,9 +32,8 @@ export default function Home() {
 
   return (
     <main className="">
-      {/* <HelperCircle /> */}
-      <div className="container mx-auto px-6 lg:px-20 ">
-        <div className="mt-10 flex justify-between items-center">
+      <div className="fixed top-0 left-0 right-0">
+        <div className="mt-10 flex justify-between items-center container mx-auto px-6 lg:px-20">
           <span className="font-bold leading-tight">TW.</span>
 
           <ul className="lg:flex gap-5 hidden">
@@ -52,16 +51,15 @@ export default function Home() {
             </li>
           </ul>
         </div>
-
-        <h1 ref={titleRef} className="text-5xl font-semibold capitalize mt-20">
-          Bored of the same old layout?
-        </h1>
-        <p ref={subtitleRef}>We, at Tingeworks, can help you with that</p>
-
-        <Canvas className="mt-10">
-          <ambientLight color={0xffffff} />
-          <Banner3DObject />
-        </Canvas>
+      </div>
+      {/* <HelperCircle /> */}
+      <div className="container mx-auto px-6 lg:px-20 ">
+        <div className="h-screen flex flex-col justify-center">
+          <h1 ref={titleRef} className="text-5xl font-semibold capitalize">
+            Bored of the same old layout?
+          </h1>
+          <p ref={subtitleRef}>We, at Tingeworks, can help you with that</p>
+        </div>
 
         <div className="mt-20">
           <h2>/3D Websites</h2>
@@ -70,11 +68,20 @@ export default function Home() {
 
         <div className="mt-20">
           <h2>/Games</h2>
+          <ItemContainer />
         </div>
 
         <div className="mt-20">
           <h2>/Immersive Experiences</h2>
+          <ItemContainer />
         </div>
+      </div>
+
+      <div className="fixed top-0 left-0 -z-10 h-screen w-screen">
+        <Canvas style={{}} className="">
+          <ambientLight color={0xffffff} />
+          <Banner3DObject />
+        </Canvas>
       </div>
     </main>
   );

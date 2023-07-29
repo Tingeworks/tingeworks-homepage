@@ -5,8 +5,8 @@ const ItemContainer = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="flex mt-2 gap-3">
-      <div className="w-10/12 flex gap-3 justify-between">
+    <div className="flex mt-2 gap-3 flex-col lg:flex-row">
+      <div className="lg:w-10/12 flex gap-3 justify-between">
         {[1, 2, 3, 4, 5, 6].map((item, index) => {
           return (
             <div
@@ -27,13 +27,9 @@ const ItemContainer = () => {
         })}
       </div>
 
-      <div className="flex-1 border border-gray-400 flex justify-center items-center">
-        <p>
-          <a className="underline cursor-pointer text-xs" href="">
-            View 10 more
-          </a>
-        </p>
-      </div>
+      <a className="flex-1 border border-gray-400 flex justify-center items-center py-4 underline cursor-pointer text-xs">
+        View 10 more
+      </a>
     </div>
   );
 };
