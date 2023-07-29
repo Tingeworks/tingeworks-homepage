@@ -7,6 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import Banner3DObject from "@/components/Banner3DObject";
 import ItemContainer from "@/components/ItemContainer";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   let titleRef = React.useRef() as React.MutableRefObject<HTMLHeadingElement>;
@@ -32,27 +33,8 @@ export default function Home() {
 
   return (
     <main className="">
-      <div className="fixed top-0 left-0 right-0">
-        <div className="mt-10 flex justify-between items-center container mx-auto px-6 lg:px-20">
-          <span className="font-bold leading-tight">TW.</span>
-
-          <ul className="lg:flex gap-5 hidden">
-            <li>
-              <a className="cursor-pointer" href="#aboutus">
-                About us
-              </a>
-            </li>
-            <li>
-              <a href="#social">Socials</a>
-            </li>
-
-            <li>
-              <a href="#contacts">Contacts</a>
-            </li>
-          </ul>
-        </div>
-      </div>
       {/* <HelperCircle /> */}
+      <Navbar />
       <div className="container mx-auto px-6 lg:px-20 ">
         <div className="h-screen flex flex-col justify-center">
           <h1 ref={titleRef} className="text-5xl font-semibold capitalize">
