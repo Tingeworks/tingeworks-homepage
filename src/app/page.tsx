@@ -6,6 +6,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import Banner3DObject from "@/components/Banner3DObject";
+import ItemContainer from "@/components/ItemContainer";
 
 export default function Home() {
   let titleRef = React.useRef() as React.MutableRefObject<HTMLHeadingElement>;
@@ -31,12 +32,12 @@ export default function Home() {
 
   return (
     <main className="">
-      <HelperCircle />
+      {/* <HelperCircle /> */}
       <div className="container mx-auto px-6 lg:px-20 ">
         <div className="mt-10 flex justify-between items-center">
           <span className="font-bold leading-tight">TW.</span>
 
-          <ul className="flex gap-5">
+          <ul className="lg:flex gap-5 hidden">
             <li>
               <a className="cursor-pointer" href="#aboutus">
                 About us
@@ -55,7 +56,7 @@ export default function Home() {
         <h1 ref={titleRef} className="text-5xl font-semibold capitalize mt-20">
           Bored of the same old layout?
         </h1>
-        <p ref={subtitleRef}>We can help you with that</p>
+        <p ref={subtitleRef}>We, at Tingeworks, can help you with that</p>
 
         <Canvas className="mt-10">
           <ambientLight color={0xffffff} />
@@ -64,6 +65,7 @@ export default function Home() {
 
         <div className="mt-20">
           <h2>/3D Websites</h2>
+          <ItemContainer />
         </div>
 
         <div className="mt-20">
