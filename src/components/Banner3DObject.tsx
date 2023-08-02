@@ -1,3 +1,4 @@
+import { OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
@@ -14,6 +15,7 @@ export default function Banner3DObject() {
 
   return (
     <points ref={Obj} position={[0, 0, -5]}>
+      <OrbitControls />
       {/* <torusGeometry args={[10, 64, 64]} /> */}
       <boxGeometry args={[10, 10, 10, 64, 64, 64]} />
       <pointsMaterial size={0.01} sizeAttenuation color={0xffffff} />
