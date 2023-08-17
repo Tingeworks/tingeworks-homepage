@@ -17,7 +17,7 @@ export default function Banner3DObject() {
     <points ref={Obj} position={[0, 0, -5]}>
       <OrbitControls />
       {/* <torusGeometry args={[10, 64, 64]} /> */}
-      <boxGeometry args={[10, 10, 10, 64, 64, 64]} />
+      <boxGeometry args={[10, 10, 10, 32, 32, 32]} />
       <pointsMaterial size={0.01} sizeAttenuation color={0xffffff} />
     </points>
   );

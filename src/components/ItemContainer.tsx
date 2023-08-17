@@ -7,20 +7,39 @@ const ItemContainer = () => {
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {[1, 2, 3, 4, 5, 6].map((item, index) => {
+        {[
+          {
+            id: 1,
+            title: "The Gazelle Times",
+            description: "Fast Times In a Shell",
+            url: "https://thegazelletimes.com",
+          },
+        ].map((item, index) => {
           return (
             <div
               key={index}
-              onMouseEnter={() => setActive(item)}
+              onMouseEnter={() => setActive(item.id)}
               onMouseLeave={() => setActive(0)}
             >
-              <img
-                src={`https://source.unsplash.com/random?${index}`}
-                className={`h-full object-cover rounded-lg transition-transform cursor-pointer ${
-                  active == item ? "scale-110" : ""
-                }`}
-                alt=""
-              />
+              <a
+                title={
+                  item.title +
+                  " | " +
+                  item.description +
+                  " | " +
+                  "By Tingeworks"
+                }
+                target="_blank"
+                href={item.url}
+              >
+                <img
+                  src={`/portfolio/1.jpg`}
+                  className={`h-full will-change-transform object-cover transition-transform cursor-pointer rounded-md ${
+                    active == item.id ? "scale-105" : ""
+                  }`}
+                  alt={item.title + " by tingeworks"}
+                />
+              </a>
             </div>
           );
         })}

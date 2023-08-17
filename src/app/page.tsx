@@ -37,10 +37,16 @@ export default function Home() {
       <Navbar />
       <div className="container mx-auto px-6 lg:px-20 ">
         <div className="h-screen flex flex-col justify-center">
-          <h1 ref={titleRef} className="text-5xl font-semibold capitalize">
-            Bored of the same old layout?
+          <h1
+            ref={titleRef}
+            className="text-5xl lg:text-6xl  font-semibold capitalize"
+          >
+            Bored of <br />
+            the same old layout?
           </h1>
-          <p ref={subtitleRef}>We, at Tingeworks, can help you with that</p>
+          <p className="text-xl lg:text-3xl" ref={subtitleRef}>
+            We, at Tingeworks, can help you with that
+          </p>
         </div>
       </div>
 
@@ -57,7 +63,7 @@ export default function Home() {
           </p>
           <h3 className="mt-10 text-lg">&gt; Team</h3>
           <section className="mt-2">
-            <h4 className="font-bold">Imtiaz Al Shariar - Founder</h4>
+            <h4 className="font-bold">Imtiaz Al Shariar | Founder</h4>
             <p>
               Imtiaz Al Shariar is a frontend developer working with startups
               and businesses around the world. Likes making games, cool ui and a
@@ -85,28 +91,19 @@ export default function Home() {
           </section>
 
           <section className="mt-4">
-            <h4 className="font-bold">Imtiaz Al Shariar - Founder</h4>
+            <h4 className="font-bold">Sakhawat Hossen | Co-Founder</h4>
             <p>
-              Imtiaz Al Shariar is a frontend developer working with startups
-              and businesses around the world. Likes making games, cool ui and a
-              bit of art here and there.
+              Sakhawat Hossen is a fullstack developer with years of experience
+              working with businesses both home and abroad. Handles complicated
+              pipelines and other server/deployment related issues.
             </p>
             <ul className="flex gap-2 mt-2">
               <li>
                 <a
                   target="_blank"
-                  href="https://www.linkedin.com/in/shariarsensei/"
+                  href="https://www.linkedin.com/in/localhost443/"
                 >
                   <FaLinkedinIn />
-                </a>
-              </li>
-
-              <li>
-                <a
-                  target="_blank"
-                  href="https://www.instagram.com/shariarsensei/"
-                >
-                  <FaInstagram />
                 </a>
               </li>
             </ul>
