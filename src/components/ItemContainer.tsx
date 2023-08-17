@@ -2,8 +2,6 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useState } from "react";
 
 const ItemContainer = () => {
-  const [active, setActive] = useState(0);
-
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -16,31 +14,21 @@ const ItemContainer = () => {
           },
         ].map((item, index) => {
           return (
-            <div
+            <a
               key={index}
-              onMouseEnter={() => setActive(item.id)}
-              onMouseLeave={() => setActive(0)}
+              title={
+                item.title + " | " + item.description + " | " + "By Tingeworks"
+              }
+              className="will-change-transform transition-transform hover:scale-105 cursor-pointer"
+              target="_blank"
+              href={item.url}
             >
-              <a
-                title={
-                  item.title +
-                  " | " +
-                  item.description +
-                  " | " +
-                  "By Tingeworks"
-                }
-                target="_blank"
-                href={item.url}
-              >
-                <img
-                  src={`/portfolio/1.jpg`}
-                  className={`h-full will-change-transform object-cover transition-transform cursor-pointer rounded-md ${
-                    active == item.id ? "scale-105" : ""
-                  }`}
-                  alt={item.title + " by tingeworks"}
-                />
-              </a>
-            </div>
+              <img
+                src={`/portfolio/1.jpg`}
+                className={`h-full object-cover rounded-md`}
+                alt={item.title + " by tingeworks"}
+              />
+            </a>
           );
         })}
       </div>
