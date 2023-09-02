@@ -8,44 +8,22 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import Banner3DObject from "@/components/Banner3DObject";
 import ItemContainer from "@/components/ItemContainer";
 import Navbar from "@/components/Navbar";
+import { Perf } from "r3f-perf";
 
 export default function Home() {
-  let titleRef = React.useRef() as React.MutableRefObject<HTMLHeadingElement>;
-  let subtitleRef =
-    React.useRef() as React.MutableRefObject<HTMLParagraphElement>;
-
-  useEffect(() => {
-    gsap.from(titleRef.current, {
-      duration: 0.5,
-      y: 100,
-      opacity: 0,
-      ease: "linear",
-    });
-
-    gsap.from(subtitleRef.current, {
-      duration: 0.5,
-      y: 50,
-      opacity: 0,
-      ease: "linear",
-      delay: 0.1,
-    });
-  }, []);
-
   return (
     <main className="">
       {/* <HelperCircle /> */}
       <Navbar />
       <div className="container mx-auto px-6 lg:px-20 ">
         <div className="h-screen flex flex-col justify-center">
-          <h1
-            ref={titleRef}
-            className="text-5xl lg:text-6xl  font-semibold capitalize"
-          >
-            Bored of <br />
-            the same old layout?
+          <h1 className="text-5xl lg:text-6xl  font-semibold capitalize">
+            Bored of the plain
+            <br />
+            old websites?
           </h1>
-          <p className="text-xl lg:text-3xl" ref={subtitleRef}>
-            We, at Tingeworks, can help you with that
+          <p className="text-xl lg:text-3xl">
+            We, at Tingeworks, can make websites that impress
           </p>
         </div>
       </div>
@@ -118,6 +96,7 @@ export default function Home() {
 
       <div className="fixed top-0 left-0 -z-10 h-screen w-screen">
         <Canvas style={{}} className="">
+          <Perf position="center" />
           <ambientLight color={0xffffff} />
           <Banner3DObject />
         </Canvas>
