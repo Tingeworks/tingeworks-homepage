@@ -7,14 +7,14 @@ export default function Banner3DObject() {
 
   useFrame((state, delta) => {
     if (Obj.current) {
-      // Obj.current.rotation.x += 0.001;
+      // Obj.current.rotation.x += 0.00001 * state.clock.getElapsedTime();
       Obj.current.rotation.z += 0.00001 * state.clock.getElapsedTime();
-      Obj.current.scale.z += Math.sin(state.clock.getElapsedTime()) * 0.005;
+      Obj.current.scale.z += Math.sin(state.clock.getElapsedTime()) * 0.001;
     }
   });
 
   return (
-    <points ref={Obj} position={[0, 0, -5]}>
+    <points ref={Obj} position={[0, 0, -6]}>
       {/* <torusGeometry args={[6, 12, 64, 64]} /> */}
       {/* <boxGeometry args={[10, 10, 10, 16, 16, 16]} /> */}
       {/* <capsuleGeometry args={[5, 5, 8, 16]} /> */}
